@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>송금 알림</title>
+<style>
+body {
+  background:#bcd6e7;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  display:flex;
+  justify-content:center;
+  padding-top:40px;
+}
+
+.card {
+  width:320px;
+  background:#ffe812;
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.title {
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.amount {
+  font-size:20px;
+  margin:8px 0;
+}
+
+.button {
+  background:#fff;
+  border-radius:6px;
+  padding:10px;
+  text-align:center;
+  font-weight:600;
+  cursor:pointer;
+  user-select:none;
+}
+
+.button:hover {
+  background:#f3f3f3;
+}
+
+.prank {
+  display:none;
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  font-weight:700;
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="fake">
+  <div class="title">송금보내요</div>
+  <div class="amount">1,000,000원을 보냈어요.</div>
+  <div style="font-size:13px;margin-bottom:10px;">
+    송금 받기 전까지 보낸 분은<br>
+    내역 상세화면에서 취소할 수 있어요.
+  </div>
+  <div class="button" onclick="reveal()">송금 받기</div>
+</div>
+
+<div class="prank" id="prank">
+  🤡 속을 줄 알았냐 ㅋㅋ<br><br>
+  <span style="font-weight:400;font-size:14px;">
+    장난 페이지입니다<br>
+    실제 송금 ❌
+  </span>
+</div>
+
+<script>
+function reveal() {
+  document.getElementById("fake").style.display = "none";
+  document.getElementById("prank").style.display = "block";
+}
+</script>
+
+</body>
+</html>
